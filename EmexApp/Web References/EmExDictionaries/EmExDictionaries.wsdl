@@ -1,0 +1,602 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="GetMakesDict">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="login" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMakesDictResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetMakesDictResult" type="tns:ArrayOfShortMakeInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfShortMakeInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ShortMakeInfo" nillable="true" type="tns:ShortMakeInfo" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ShortMakeInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="MakeLogo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MakeName" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetConsumersDict">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="login" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="consumerId" nillable="true" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetConsumersDictResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetConsumersDictResult" type="tns:ArrayOfConsumerInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfConsumerInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ConsumerInfo" nillable="true" type="tns:ConsumerInfo" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ConsumerInfo">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="UserId" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="ConsumerId" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="UserFamily" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="UserFirstName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="UserLastName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="UserLogo" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="LocationId" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="LocationAddress" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LocationAddressAdditional" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="OptovikManagerId" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="OptovikManagerFio" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetPricesAndSignsDict2">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="login" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="priceLogo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="destinationLogo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPricesAndSignsDict2Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPricesAndSignsDict2Result" type="tns:ArrayOfPriceAndSigns2" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfPriceAndSigns2">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="PriceAndSigns2" nillable="true" type="tns:PriceAndSigns2" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="PriceAndSigns2">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="PriceLogo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PriceDesc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DestinationLogo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DestinationDesc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PriceDescPublicFull" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="OriginalSigns" type="tns:PriceSigns" />
+          <s:element minOccurs="0" maxOccurs="1" name="NotOriginalSigns" type="tns:PriceSigns" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="PriceSigns">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ONLY" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="BRAND" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="QUAN" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="UNIT" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="WAIT" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetPricesAndSignsDict">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="login" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="priceLogo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="destinationLogo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPricesAndSignsDictResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPricesAndSignsDictResult" type="tns:ArrayOfPriceAndSigns" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfPriceAndSigns">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="PriceAndSigns" nillable="true" type="tns:PriceAndSigns" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="PriceAndSigns">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="PriceLogo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PriceDesc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DestinationLogo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DestinationDesc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PriceDescPublicFull" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Days" type="s:short" />
+          <s:element minOccurs="1" maxOccurs="1" name="DeliverTimeGuaranteed" type="s:short" />
+          <s:element minOccurs="0" maxOccurs="1" name="OriginalSigns" type="tns:PriceSigns" />
+          <s:element minOccurs="0" maxOccurs="1" name="NotOriginalSigns" type="tns:PriceSigns" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetConsumersDict_Test">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="login" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="consumerIdString" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetConsumersDict_TestResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetConsumersDict_TestResult" type="tns:ArrayOfConsumerInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TestConnect">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="s" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TestConnectResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TestConnectResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ArrayOfShortMakeInfo" nillable="true" type="tns:ArrayOfShortMakeInfo" />
+      <s:element name="ArrayOfPriceAndSigns2" nillable="true" type="tns:ArrayOfPriceAndSigns2" />
+      <s:element name="ArrayOfPriceAndSigns" nillable="true" type="tns:ArrayOfPriceAndSigns" />
+      <s:element name="ArrayOfConsumerInfo" nillable="true" type="tns:ArrayOfConsumerInfo" />
+      <s:element name="string" nillable="true" type="s:string" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetMakesDictSoapIn">
+    <wsdl:part name="parameters" element="tns:GetMakesDict" />
+  </wsdl:message>
+  <wsdl:message name="GetMakesDictSoapOut">
+    <wsdl:part name="parameters" element="tns:GetMakesDictResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetConsumersDictSoapIn">
+    <wsdl:part name="parameters" element="tns:GetConsumersDict" />
+  </wsdl:message>
+  <wsdl:message name="GetConsumersDictSoapOut">
+    <wsdl:part name="parameters" element="tns:GetConsumersDictResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPricesAndSignsDict2SoapIn">
+    <wsdl:part name="parameters" element="tns:GetPricesAndSignsDict2" />
+  </wsdl:message>
+  <wsdl:message name="GetPricesAndSignsDict2SoapOut">
+    <wsdl:part name="parameters" element="tns:GetPricesAndSignsDict2Response" />
+  </wsdl:message>
+  <wsdl:message name="GetPricesAndSignsDictSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPricesAndSignsDict" />
+  </wsdl:message>
+  <wsdl:message name="GetPricesAndSignsDictSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPricesAndSignsDictResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetConsumersDict_TestSoapIn">
+    <wsdl:part name="parameters" element="tns:GetConsumersDict_Test" />
+  </wsdl:message>
+  <wsdl:message name="GetConsumersDict_TestSoapOut">
+    <wsdl:part name="parameters" element="tns:GetConsumersDict_TestResponse" />
+  </wsdl:message>
+  <wsdl:message name="TestConnectSoapIn">
+    <wsdl:part name="parameters" element="tns:TestConnect" />
+  </wsdl:message>
+  <wsdl:message name="TestConnectSoapOut">
+    <wsdl:part name="parameters" element="tns:TestConnectResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetMakesDictHttpGetIn">
+    <wsdl:part name="login" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetMakesDictHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfShortMakeInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetPricesAndSignsDict2HttpGetIn">
+    <wsdl:part name="login" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+    <wsdl:part name="priceLogo" type="s:string" />
+    <wsdl:part name="destinationLogo" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetPricesAndSignsDict2HttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfPriceAndSigns2" />
+  </wsdl:message>
+  <wsdl:message name="GetPricesAndSignsDictHttpGetIn">
+    <wsdl:part name="login" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+    <wsdl:part name="priceLogo" type="s:string" />
+    <wsdl:part name="destinationLogo" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetPricesAndSignsDictHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfPriceAndSigns" />
+  </wsdl:message>
+  <wsdl:message name="GetConsumersDict_TestHttpGetIn">
+    <wsdl:part name="login" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+    <wsdl:part name="consumerIdString" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetConsumersDict_TestHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfConsumerInfo" />
+  </wsdl:message>
+  <wsdl:message name="TestConnectHttpGetIn">
+    <wsdl:part name="s" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="TestConnectHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetMakesDictHttpPostIn">
+    <wsdl:part name="login" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetMakesDictHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfShortMakeInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetPricesAndSignsDict2HttpPostIn">
+    <wsdl:part name="login" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+    <wsdl:part name="priceLogo" type="s:string" />
+    <wsdl:part name="destinationLogo" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetPricesAndSignsDict2HttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfPriceAndSigns2" />
+  </wsdl:message>
+  <wsdl:message name="GetPricesAndSignsDictHttpPostIn">
+    <wsdl:part name="login" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+    <wsdl:part name="priceLogo" type="s:string" />
+    <wsdl:part name="destinationLogo" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetPricesAndSignsDictHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfPriceAndSigns" />
+  </wsdl:message>
+  <wsdl:message name="GetConsumersDict_TestHttpPostIn">
+    <wsdl:part name="login" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+    <wsdl:part name="consumerIdString" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetConsumersDict_TestHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfConsumerInfo" />
+  </wsdl:message>
+  <wsdl:message name="TestConnectHttpPostIn">
+    <wsdl:part name="s" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="TestConnectHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:portType name="EmExDictionariesSoap">
+    <wsdl:operation name="GetMakesDict">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Метод получает список производителей. &lt;a href ='http://wsdoc.emex.ru/webframe.html?GetMakesDict.html' target = '_blank'&gt;Подробнее...&lt;/a&gt;</wsdl:documentation>
+      <wsdl:input message="tns:GetMakesDictSoapIn" />
+      <wsdl:output message="tns:GetMakesDictSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetConsumersDict">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Метод получает список потребителей оптовика. &lt;a href ='http://wsdoc.emex.ru/webframe.html?GetConsumersDict.html' target = '_blank'&gt;Подробнее...&lt;/a&gt;</wsdl:documentation>
+      <wsdl:input message="tns:GetConsumersDictSoapIn" />
+      <wsdl:output message="tns:GetConsumersDictSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPricesAndSignsDict2">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Метод получает словарь прайсов. &lt;a href ='http://wsdoc.emex.ru/webframe.html?GetPricesAndSignsDict2.html' target = '_blank'&gt;Подробнее...&lt;/a&gt;</wsdl:documentation>
+      <wsdl:input message="tns:GetPricesAndSignsDict2SoapIn" />
+      <wsdl:output message="tns:GetPricesAndSignsDict2SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPricesAndSignsDict">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Метод получает словарь прайсов. &lt;a href ='http://wsdoc.emex.ru/webframe.html?GetPricesAndSignsDict.html' target = '_blank'&gt;Подробнее...&lt;/a&gt;</wsdl:documentation>
+      <wsdl:input message="tns:GetPricesAndSignsDictSoapIn" />
+      <wsdl:output message="tns:GetPricesAndSignsDictSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetConsumersDict_Test">
+      <wsdl:input message="tns:GetConsumersDict_TestSoapIn" />
+      <wsdl:output message="tns:GetConsumersDict_TestSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TestConnect">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Тестирование сервиса.</wsdl:documentation>
+      <wsdl:input message="tns:TestConnectSoapIn" />
+      <wsdl:output message="tns:TestConnectSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="EmExDictionariesHttpGet">
+    <wsdl:operation name="GetMakesDict">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Метод получает список производителей. &lt;a href ='http://wsdoc.emex.ru/webframe.html?GetMakesDict.html' target = '_blank'&gt;Подробнее...&lt;/a&gt;</wsdl:documentation>
+      <wsdl:input message="tns:GetMakesDictHttpGetIn" />
+      <wsdl:output message="tns:GetMakesDictHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPricesAndSignsDict2">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Метод получает словарь прайсов. &lt;a href ='http://wsdoc.emex.ru/webframe.html?GetPricesAndSignsDict2.html' target = '_blank'&gt;Подробнее...&lt;/a&gt;</wsdl:documentation>
+      <wsdl:input message="tns:GetPricesAndSignsDict2HttpGetIn" />
+      <wsdl:output message="tns:GetPricesAndSignsDict2HttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPricesAndSignsDict">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Метод получает словарь прайсов. &lt;a href ='http://wsdoc.emex.ru/webframe.html?GetPricesAndSignsDict.html' target = '_blank'&gt;Подробнее...&lt;/a&gt;</wsdl:documentation>
+      <wsdl:input message="tns:GetPricesAndSignsDictHttpGetIn" />
+      <wsdl:output message="tns:GetPricesAndSignsDictHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetConsumersDict_Test">
+      <wsdl:input message="tns:GetConsumersDict_TestHttpGetIn" />
+      <wsdl:output message="tns:GetConsumersDict_TestHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TestConnect">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Тестирование сервиса.</wsdl:documentation>
+      <wsdl:input message="tns:TestConnectHttpGetIn" />
+      <wsdl:output message="tns:TestConnectHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="EmExDictionariesHttpPost">
+    <wsdl:operation name="GetMakesDict">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Метод получает список производителей. &lt;a href ='http://wsdoc.emex.ru/webframe.html?GetMakesDict.html' target = '_blank'&gt;Подробнее...&lt;/a&gt;</wsdl:documentation>
+      <wsdl:input message="tns:GetMakesDictHttpPostIn" />
+      <wsdl:output message="tns:GetMakesDictHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPricesAndSignsDict2">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Метод получает словарь прайсов. &lt;a href ='http://wsdoc.emex.ru/webframe.html?GetPricesAndSignsDict2.html' target = '_blank'&gt;Подробнее...&lt;/a&gt;</wsdl:documentation>
+      <wsdl:input message="tns:GetPricesAndSignsDict2HttpPostIn" />
+      <wsdl:output message="tns:GetPricesAndSignsDict2HttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPricesAndSignsDict">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Метод получает словарь прайсов. &lt;a href ='http://wsdoc.emex.ru/webframe.html?GetPricesAndSignsDict.html' target = '_blank'&gt;Подробнее...&lt;/a&gt;</wsdl:documentation>
+      <wsdl:input message="tns:GetPricesAndSignsDictHttpPostIn" />
+      <wsdl:output message="tns:GetPricesAndSignsDictHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetConsumersDict_Test">
+      <wsdl:input message="tns:GetConsumersDict_TestHttpPostIn" />
+      <wsdl:output message="tns:GetConsumersDict_TestHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TestConnect">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Тестирование сервиса.</wsdl:documentation>
+      <wsdl:input message="tns:TestConnectHttpPostIn" />
+      <wsdl:output message="tns:TestConnectHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="EmExDictionariesSoap" type="tns:EmExDictionariesSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetMakesDict">
+      <soap:operation soapAction="http://tempuri.org/GetMakesDict" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetConsumersDict">
+      <soap:operation soapAction="http://tempuri.org/GetConsumersDict" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPricesAndSignsDict2">
+      <soap:operation soapAction="http://tempuri.org/GetPricesAndSignsDict2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPricesAndSignsDict">
+      <soap:operation soapAction="http://tempuri.org/GetPricesAndSignsDict" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetConsumersDict_Test">
+      <soap:operation soapAction="http://tempuri.org/GetConsumersDict_Test" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TestConnect">
+      <soap:operation soapAction="http://tempuri.org/TestConnect" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="EmExDictionariesSoap12" type="tns:EmExDictionariesSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetMakesDict">
+      <soap12:operation soapAction="http://tempuri.org/GetMakesDict" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetConsumersDict">
+      <soap12:operation soapAction="http://tempuri.org/GetConsumersDict" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPricesAndSignsDict2">
+      <soap12:operation soapAction="http://tempuri.org/GetPricesAndSignsDict2" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPricesAndSignsDict">
+      <soap12:operation soapAction="http://tempuri.org/GetPricesAndSignsDict" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetConsumersDict_Test">
+      <soap12:operation soapAction="http://tempuri.org/GetConsumersDict_Test" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TestConnect">
+      <soap12:operation soapAction="http://tempuri.org/TestConnect" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="EmExDictionariesHttpGet" type="tns:EmExDictionariesHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="GetMakesDict">
+      <http:operation location="/GetMakesDict" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPricesAndSignsDict2">
+      <http:operation location="/GetPricesAndSignsDict2" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPricesAndSignsDict">
+      <http:operation location="/GetPricesAndSignsDict" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetConsumersDict_Test">
+      <http:operation location="/GetConsumersDict_Test" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TestConnect">
+      <http:operation location="/TestConnect" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="EmExDictionariesHttpPost" type="tns:EmExDictionariesHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="GetMakesDict">
+      <http:operation location="/GetMakesDict" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPricesAndSignsDict2">
+      <http:operation location="/GetPricesAndSignsDict2" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPricesAndSignsDict">
+      <http:operation location="/GetPricesAndSignsDict" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetConsumersDict_Test">
+      <http:operation location="/GetConsumersDict_Test" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TestConnect">
+      <http:operation location="/TestConnect" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="EmExDictionaries">
+    <wsdl:port name="EmExDictionariesSoap" binding="tns:EmExDictionariesSoap">
+      <soap:address location="http://ws.emex.ru/EmExDictionaries.asmx" />
+    </wsdl:port>
+    <wsdl:port name="EmExDictionariesSoap12" binding="tns:EmExDictionariesSoap12">
+      <soap12:address location="http://ws.emex.ru/EmExDictionaries.asmx" />
+    </wsdl:port>
+    <wsdl:port name="EmExDictionariesHttpGet" binding="tns:EmExDictionariesHttpGet">
+      <http:address location="http://ws.emex.ru/EmExDictionaries.asmx" />
+    </wsdl:port>
+    <wsdl:port name="EmExDictionariesHttpPost" binding="tns:EmExDictionariesHttpPost">
+      <http:address location="http://ws.emex.ru/EmExDictionaries.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

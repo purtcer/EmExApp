@@ -1,0 +1,14 @@
+C:\EmexApp\EmexApp\EmexApp\bin\Debug\EmexApp.exe.config
+C:\EmexApp\EmexApp\EmexApp\bin\Debug\EmexApp.exe
+C:\EmexApp\EmexApp\EmexApp\bin\Debug\EmexApp.pdb
+C:\EmexApp\EmexApp\EmexApp\obj\Debug\EmexApp.csprojResolveAssemblyReference.cache
+C:\EmexApp\EmexApp\EmexApp\obj\Debug\MainWindow.g.cs
+C:\EmexApp\EmexApp\EmexApp\obj\Debug\App.g.cs
+C:\EmexApp\EmexApp\EmexApp\obj\Debug\EmexApp_MarkupCompile.cache
+C:\EmexApp\EmexApp\EmexApp\obj\Debug\EmexApp_MarkupCompile.lref
+C:\EmexApp\EmexApp\EmexApp\obj\Debug\MainWindow.baml
+C:\EmexApp\EmexApp\EmexApp\obj\Debug\EmexApp.g.resources
+C:\EmexApp\EmexApp\EmexApp\obj\Debug\EmexApp.Properties.Resources.resources
+C:\EmexApp\EmexApp\EmexApp\obj\Debug\EmexApp.csproj.GenerateResource.Cache
+C:\EmexApp\EmexApp\EmexApp\obj\Debug\EmexApp.exe
+C:\EmexApp\EmexApp\EmexApp\obj\Debug\EmexApp.pdb
