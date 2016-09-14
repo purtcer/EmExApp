@@ -24,16 +24,22 @@ namespace EmexApp
         public MainWindow()
         {
             InitializeComponent();
-            UpbateClientsList();
+            try
+            {
+                UpbateClientsList(new Wholesaler());
+            }
+            catch
+            {
+                UpbateClientsList(new WholesalerMock());
+            }
         }
 
-        void UpbateClientsList()
+        void UpbateClientsList(IWholesaler Wholesaler)
         {
-            EmExDictionaries.EmExDictionaries emexServices = new EmExDictionaries.EmExDictionaries();
-            EmExDictionaries.ConsumerInfo[] clientsList = emexServices.GetConsumersDict(112, "341292ast", null);
-            foreach  (EmExDictionaries.ConsumerInfo elements in clientsList)
+            List<string> RepresentationList = Wholesaler.WholesalerRepresentationList();
+            foreach(string elements in RepresentationList)
             {
-                cbClients.Items.Add(elements.UserLogo);
+                cbClients.Items.Add(elements);
             }
         }
     }

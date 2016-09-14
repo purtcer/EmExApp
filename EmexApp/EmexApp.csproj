@@ -60,11 +60,15 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Consumer.cs" />
+    <Compile Include="StaticVariables.cs" />
     <Compile Include="Web References\EmExDictionaries\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.map</DependentUpon>
     </Compile>
+    <Compile Include="IWholesaler.cs" />
+    <Compile Include="Wholesaler.cs" />
+    <Compile Include="WholesalerMock.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -96,7 +100,6 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <None Include="ClassDiagram1.cd" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

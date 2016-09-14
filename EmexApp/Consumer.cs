@@ -10,6 +10,7 @@ namespace EmexApp
     {
         public int login;
         public string password;
+
         public Consumer()
         {
             login = Properties.Settings.Default.Login;
