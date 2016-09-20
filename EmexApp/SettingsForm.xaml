@@ -1,0 +1,25 @@
+﻿<Window x:Class="EmexApp.SettingsForm"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:EmexApp"
+        mc:Ignorable="d"
+        Title="SettingsForm" Width="306" Height="128" ResizeMode="NoResize">
+    <Grid>
+        <StackPanel>
+            <StackPanel Height="26" Orientation="Horizontal" Margin="0,2">
+                <Label Content="Пользователь:" Width="90" />
+                <TextBox x:Name="tbUser" Width="194" Margin="2" />
+            </StackPanel>
+            <StackPanel Height="26" Orientation="Horizontal" Margin="0,2">
+                <Label Content="Пароль:" Width="90" />
+                <PasswordBox x:Name="tbPassword" Width="194" Margin="2" />
+            </StackPanel>
+            <StackPanel Height="26" Orientation="Horizontal" Margin="0,2" VerticalAlignment="Center" HorizontalAlignment="Center">
+                <Button x:Name="btnSave" Content="Сохранить" VerticalAlignment="Bottom" Margin="2,0,2,2" Width="64" Click="btnSave_Click" />
+                <Button x:Name="btnClose" Content="Закрыть" VerticalAlignment="Center" Margin="2,0" Width="64" Click="btnClose_Click" />
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>

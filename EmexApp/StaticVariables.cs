@@ -21,6 +21,31 @@ namespace EmexApp
             public string LocationAddressAdditional;
             public string OptovikManagerId;
             public string OptovikManagerFio;
-        }        
+        }
+
+        public struct InmConsumerElement
+        {
+            public string DetailNum;
+            public string DetailNameRusUser;
+            public int AccPriceOrdPotrRUR;
+            public int AccPriceLastPotrRUR;
+            public int AccQuantity;
+            public string DestinationLogo;
+            public int GlobalId;
+            public string MakeLogo;
+            public string PotrebitelId;
+            public string PotrebitelReference;
+            public string PriceLogo;
+            public string PotrebitelName;
+            public int UserId;
+            public string timestamp;
+        }
+
+        public struct InmotionElement
+        {
+            public int GlobalId;
+            public int Count;
+            public int State;
+        }
     }
 }

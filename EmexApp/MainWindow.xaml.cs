@@ -21,26 +21,56 @@ namespace EmexApp
     /// </summary>
     public partial class MainWindow : Window
     {
+        private IWholesaler Wholesaler;
+        private IInmConsumer InmConsumer;
         public MainWindow()
         {
             InitializeComponent();
             try
             {
-                UpbateClientsList(new Wholesaler());
+                Wholesaler = new Wholesaler();
             }
             catch
             {
-                UpbateClientsList(new WholesalerMock());
+                Wholesaler = new WholesalerMock();
             }
+            try
+            {
+                InmConsumer = new InmConsumer();
+            }
+            catch
+            {
+                InmConsumer = new InmConsumerMock();
+            }
+            UpbateClientsList();
         }
 
-        void UpbateClientsList(IWholesaler Wholesaler)
+        void UpbateClientsList()
         {
             List<string> RepresentationList = Wholesaler.WholesalerRepresentationList();
             foreach(string elements in RepresentationList)
             {
                 cbClients.Items.Add(elements);
             }
+        }
+
+        private void cbClients_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            StaticVariables.WholesalerElement WholesalerElement = Wholesaler.WholesalerElement(cbClients.SelectedIndex);
+            dgInmConsumer.ItemsSource = InmConsumer.InmConsumerList(WholesalerElement);
+        }
+
+        private void btnPrint_Click(object sender, RoutedEventArgs e)
+        {
+            StaticVariables.WholesalerElement WholesalerElement = Wholesaler.WholesalerElement(cbClients.SelectedIndex);
+            List<InmConsumerDefault> MainInmConsumerList = InmConsumer.InmConsumerList(WholesalerElement);
+            PrintDetailList printDetailsList = new PrintDetailList(MainInmConsumerList);
+        }
+
+        private void btnSettings_Click(object sender, RoutedEventArgs e)
+        {
+            SettingsForm frmSettings = new SettingsForm();
+            frmSettings.Show();
         }
     }
 }

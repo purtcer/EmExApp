@@ -12,12 +12,11 @@ namespace EmexApp
         public WholesalerMock()
         {
             IniteWholesalerList();
-
         }
 
-        public Enum WholesalerElement(string WholesalerId)
+        public StaticVariables.WholesalerElement WholesalerElement(int WholesalerIndex)
         {
-            throw new NotImplementedException();
+            return WholesalerList[WholesalerIndex];
         }
 
         public List<string> WholesalerRepresentationList()

@@ -26,3 +26,5 @@ C:\Repo\EmExApp\EmexApp\obj\Debug\MainWindow.baml
 C:\Repo\EmExApp\EmexApp\obj\Debug\EmexApp.g.resources
 C:\Repo\EmExApp\EmexApp\obj\Debug\EmexApp.Properties.Resources.resources
 C:\Repo\EmExApp\EmexApp\obj\Debug\EmexApp.csproj.GenerateResource.Cache
+C:\Repo\EmExApp\EmexApp\obj\Debug\SettingsForm.g.cs
+C:\Repo\EmExApp\EmexApp\obj\Debug\SettingsForm.baml
