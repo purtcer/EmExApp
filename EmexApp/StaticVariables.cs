@@ -25,6 +25,7 @@ namespace EmexApp
 
         public struct InmConsumerElement
         {
+            public bool IsChecked;
             public string DetailNum;
             public string DetailNameRusUser;
             public int AccPriceOrdPotrRUR;

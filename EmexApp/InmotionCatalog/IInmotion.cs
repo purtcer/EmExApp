@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EmexApp.WholesalerCatalog
+namespace EmexApp
 {
     interface IInmotion
     {
-        public void SetInmotionState(StaticVariables.InmotionElement[] inmotionElement)
+        void SetInmotionState(List<StaticVariables.InmotionElement> inmotionElement);
     }
 }

@@ -4,9 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EmexApp.InmotionCatalog
+namespace EmexApp
 {
-    class Inmotion
+    class Inmotion : IInmotion
     {
+        void IInmotion.SetInmotionState(List<StaticVariables.InmotionElement> inmotionElement)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

@@ -9,8 +9,9 @@
     <Grid>
         <StackPanel Orientation="Horizontal" Height="30" VerticalAlignment="Top" Width="515" HorizontalAlignment="Left">
             <Label x:Name="lblClients" Content="Оптовик" HorizontalAlignment="Left" Margin="2,1,0,0" VerticalAlignment="Top"/>
-            <ComboBox x:Name="cbClients" HorizontalAlignment="Left" Margin="2,4,0,0" VerticalAlignment="Top" Width="328" SelectionChanged="cbClients_SelectionChanged"/>
-            <Button x:Name="btnPrint" Content="Печать" HorizontalAlignment="Left" Margin="2,4,0,0" VerticalAlignment="Top" Width="86" Click="btnPrint_Click"/>
+            <ComboBox x:Name="cbClients" HorizontalAlignment="Left" Margin="2,4,0,0" VerticalAlignment="Top" Width="280" SelectionChanged="cbClients_SelectionChanged"/>
+            <Button x:Name="btnPrint" Content="Печать" HorizontalAlignment="Left" Margin="2,4,0,0" VerticalAlignment="Top" Width="60" Click="btnPrint_Click"/>
+            <Button x:Name="btnSend" Content="Отправить" HorizontalAlignment="Left" Margin="2,4,0,0" VerticalAlignment="Top" Width="70" Click="btnSend_Click" />
             <Button x:Name="btnSettings" Content="TT" HorizontalAlignment="Left" Margin="2,4,0,0" VerticalAlignment="Top" Width="25" Click="btnSettings_Click"/>
         </StackPanel>
         <DataGrid x:Name="dgInmConsumer" Margin="1,32,1,1" AutoGenerateColumns="False" CanUserResizeRows="False" CanUserAddRows="False" IsManipulationEnabled="True">

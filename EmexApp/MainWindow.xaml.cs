@@ -23,6 +23,7 @@ namespace EmexApp
     {
         private IWholesaler Wholesaler;
         private IInmConsumer InmConsumer;
+        private IInmotion Inmotion;
         public MainWindow()
         {
             InitializeComponent();
@@ -41,6 +42,14 @@ namespace EmexApp
             catch
             {
                 InmConsumer = new InmConsumerMock();
+            }
+            try
+            {
+                Inmotion = new Inmotion();
+            }
+            catch
+            {
+                Inmotion = new InmotionMock();
             }
             UpbateClientsList();
         }
@@ -71,6 +80,30 @@ namespace EmexApp
         {
             SettingsForm frmSettings = new SettingsForm();
             frmSettings.Show();
+        }
+
+        private void btnSend_Click(object sender, RoutedEventArgs e)
+        {
+            StaticVariables.InmotionElement inmotionElement;
+            List<StaticVariables.InmotionElement> inmotionElements = new List<StaticVariables.InmotionElement>();
+            if (dgInmConsumer.ItemsSource != null)
+            {
+                foreach (InmConsumerDefault elementData in dgInmConsumer.ItemsSource)
+                {
+                    if (elementData.IsChecked & elementData.AccQuantity != 0)
+                    {
+                        inmotionElement = new StaticVariables.InmotionElement();
+                        inmotionElement.Count = elementData.AccQuantity;
+                        inmotionElement.GlobalId = elementData.GlobalId;
+                        inmotionElement.State = 8;
+                        inmotionElements.Add(inmotionElement);
+                    }
+                }
+            }
+            if (inmotionElements.Count > 0)
+            {
+                Inmotion.SetInmotionState(inmotionElements);
+            }
         }
     }
 }
