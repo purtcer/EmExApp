@@ -8,7 +8,7 @@ namespace EmexApp
 {
     class InmConsumer : IInmConsumer
     {
-        List<StaticVariables.InmConsumerElement> MainInmConsumerList;
+        List<InmConsumerDefault> MainInmConsumerList;
 
         public InmConsumer()
         {
@@ -22,75 +22,30 @@ namespace EmexApp
 
         private void IniteInmConsumerList()
         {
-            StaticVariables.InmConsumerElement InmConsumerElement;
-
-            InmConsumerElement = new StaticVariables.InmConsumerElement();
-            InmConsumerElement.DetailNum = "CBT40";
-            InmConsumerElement.DetailNameRusUser = "Опора шаровая";
-            InmConsumerElement.AccPriceOrdPotrRUR = 1000;
-            InmConsumerElement.AccPriceLastPotrRUR = 1000;
-            InmConsumerElement.AccQuantity = 1;
-            InmConsumerElement.DestinationLogo = "WMS";
-            InmConsumerElement.GlobalId = 111111;
-            InmConsumerElement.MakeLogo = "TY";
-            InmConsumerElement.PotrebitelId = "111";
-            InmConsumerElement.PotrebitelReference = "111";
-            InmConsumerElement.PriceLogo = "WMS";
-            InmConsumerElement.PotrebitelName = "111";
-            InmConsumerElement.UserId = 112;
-            InmConsumerElement.timestamp = "111";
-            MainInmConsumerList.Add(InmConsumerElement);
-
-            InmConsumerElement = new StaticVariables.InmConsumerElement();
-            InmConsumerElement.DetailNum = "CBT41";
-            InmConsumerElement.DetailNameRusUser = "Опора шаровая 1";
-            InmConsumerElement.AccPriceOrdPotrRUR = 2000;
-            InmConsumerElement.AccPriceLastPotrRUR = 2000;
-            InmConsumerElement.AccQuantity = 2;
-            InmConsumerElement.DestinationLogo = "TMS";
-            InmConsumerElement.GlobalId = 2222222;
-            InmConsumerElement.MakeLogo = "MC";
-            InmConsumerElement.PotrebitelId = "222";
-            InmConsumerElement.PotrebitelReference = "222";
-            InmConsumerElement.PriceLogo = "TMS";
-            InmConsumerElement.PotrebitelName = "222";
-            InmConsumerElement.UserId = 112;
-            InmConsumerElement.timestamp = "222";
-            MainInmConsumerList.Add(InmConsumerElement);
-
-            InmConsumerElement = new StaticVariables.InmConsumerElement();
-            InmConsumerElement.DetailNum = "CBT42";
-            InmConsumerElement.DetailNameRusUser = "Опора шаровая 2";
-            InmConsumerElement.AccPriceOrdPotrRUR = 3000;
-            InmConsumerElement.AccPriceLastPotrRUR = 3000;
-            InmConsumerElement.AccQuantity = 3;
-            InmConsumerElement.DestinationLogo = "YMS";
-            InmConsumerElement.GlobalId = 111111;
-            InmConsumerElement.MakeLogo = "NS";
-            InmConsumerElement.PotrebitelId = "333";
-            InmConsumerElement.PotrebitelReference = "333";
-            InmConsumerElement.PriceLogo = "YMS";
-            InmConsumerElement.PotrebitelName = "333";
-            InmConsumerElement.UserId = 112;
-            InmConsumerElement.timestamp = "333";
-            MainInmConsumerList.Add(InmConsumerElement);
-
-            InmConsumerElement = new StaticVariables.InmConsumerElement();
-            InmConsumerElement.DetailNum = "CBT43";
-            InmConsumerElement.DetailNameRusUser = "Опора шаровая 4";
-            InmConsumerElement.AccPriceOrdPotrRUR = 4000;
-            InmConsumerElement.AccPriceLastPotrRUR = 4000;
-            InmConsumerElement.AccQuantity = 4;
-            InmConsumerElement.DestinationLogo = "EMS";
-            InmConsumerElement.GlobalId = 4444444;
-            InmConsumerElement.MakeLogo = "MZ";
-            InmConsumerElement.PotrebitelId = "444";
-            InmConsumerElement.PotrebitelReference = "444";
-            InmConsumerElement.PriceLogo = "EMS";
-            InmConsumerElement.PotrebitelName = "444";
-            InmConsumerElement.UserId = 112;
-            InmConsumerElement.timestamp = "444";
-            MainInmConsumerList.Add(InmConsumerElement);
+            Consumer consumerObject = new Consumer();
+            MainInmConsumerList = new List<InmConsumerDefault>();
+            InmConsumerDefault InmConsumerElement;
+            int[] filterStatus = new int[1] { 7 };
+            EmExInmotion.EmExInmotion inMotion = new EmExInmotion.EmExInmotion();
+            EmExInmotion.InmConsumer_v2[] inmConsumerlist = inMotion.GetWholesalerInmotion(consumerObject.login, consumerObject.password, null, null, null, null, states:filterStatus, reference:null, detailNum:null, timestamp: null, activeOnly:true);
+            foreach(EmExInmotion.InmConsumer_v2 inmConsumerElement in inmConsumerlist)
+            {
+                InmConsumerElement = new InmConsumerDefault();
+                InmConsumerElement.DetailNum = inmConsumerElement.DetailNum;
+                InmConsumerElement.DetailNameRusUser = inmConsumerElement.DetailNameRusUser;
+                InmConsumerElement.AccPriceOrdPotrRUR = (decimal)inmConsumerElement.AccPriceOrdPotrRUR;
+                InmConsumerElement.AccPriceLastPotrRUR = (decimal)inmConsumerElement.AccPriceLastPotrRUR;
+                InmConsumerElement.AccQuantity = (short)inmConsumerElement.AccQuantity;
+                InmConsumerElement.DestinationLogo = inmConsumerElement.DestinationLogo;
+                InmConsumerElement.GlobalId = inmConsumerElement.GlobalId;
+                InmConsumerElement.MakeLogo = inmConsumerElement.MakeLogo;
+                InmConsumerElement.PotrebitelId = (long)inmConsumerElement.PotrebitelId;
+                InmConsumerElement.PotrebitelReference = inmConsumerElement.PotrebitelReference;
+                InmConsumerElement.PriceLogo = inmConsumerElement.PriceLogo;
+                InmConsumerElement.PotrebitelName = inmConsumerElement.PotrebitelName;
+                InmConsumerElement.UserId = inmConsumerElement.UserId;
+                MainInmConsumerList.Add(InmConsumerElement);
+            }
         }
     }
 }

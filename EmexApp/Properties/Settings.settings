@@ -11,5 +11,8 @@
     <Setting Name="Password" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
+    <Setting Name="EmexApp_EmExInmotion_EmExInmotion" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://ws.emex.ru/EmExInmotion.asmx</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

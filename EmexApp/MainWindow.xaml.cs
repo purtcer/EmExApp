@@ -27,6 +27,22 @@ namespace EmexApp
         public MainWindow()
         {
             InitializeComponent();
+            Consumer consumerObject = new Consumer();
+            if (consumerObject.password.Length > 0)
+            {
+                InitializeWorkSpace();
+            }
+            else
+            {
+                Wholesaler = new WholesalerMock();
+                InmConsumer = new InmConsumerMock();
+                Inmotion = new InmotionMock();
+            }
+            UpbateClientsList();
+        }
+
+        void InitializeWorkSpace()
+        {
             try
             {
                 Wholesaler = new Wholesaler();
@@ -35,14 +51,9 @@ namespace EmexApp
             {
                 Wholesaler = new WholesalerMock();
             }
-            try
-            {
+            
                 InmConsumer = new InmConsumer();
-            }
-            catch
-            {
-                InmConsumer = new InmConsumerMock();
-            }
+            
             try
             {
                 Inmotion = new Inmotion();
@@ -51,7 +62,6 @@ namespace EmexApp
             {
                 Inmotion = new InmotionMock();
             }
-            UpbateClientsList();
         }
 
         void UpbateClientsList()

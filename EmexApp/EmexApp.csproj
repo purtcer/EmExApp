@@ -79,6 +79,11 @@
       <DependentUpon>Reference.map</DependentUpon>
     </Compile>
     <Compile Include="InmotionCatalog\IInmotion.cs" />
+    <Compile Include="Web References\EmExInmotion\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
     <Compile Include="WholesalerCatalog\IWholesaler.cs" />
     <Compile Include="WholesalerCatalog\Wholesaler.cs" />
     <Compile Include="WholesalerCatalog\WholesalerMock.cs" />
@@ -140,6 +145,26 @@
     <None Include="Web References\EmExDictionaries\ShortMakeInfo.datasource">
       <DependentUpon>Reference.map</DependentUpon>
     </None>
+    <None Include="Web References\EmExInmotion\EmExInmotion.wsdl" />
+    <None Include="Web References\EmExInmotion\InmConsumer_v2.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\EmExInmotion\InmConsumer_v3.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\EmExInmotion\InmWholesaler_v2.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\EmExInmotion\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\EmExInmotion\SetInmotionStateByGlobalIdOutputItem.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\EmExInmotion\SetInmotionStateBySubIdOutputItem.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -162,11 +187,24 @@
       <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
       <CachedSettingsPropName>EmexApp_EmExDictionaries_EmExDictionaries</CachedSettingsPropName>
     </WebReferenceUrl>
+    <WebReferenceUrl Include="http://ws.emex.ru/EmExInmotion.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\EmExInmotion\</RelPath>
+      <UpdateFromURL>http://ws.emex.ru/EmExInmotion.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>EmexApp_EmExInmotion_EmExInmotion</CachedSettingsPropName>
+    </WebReferenceUrl>
   </ItemGroup>
   <ItemGroup>
     <None Include="Web References\EmExDictionaries\EmExDictionaries.disco" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Web References\EmExInmotion\EmExInmotion.disco" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

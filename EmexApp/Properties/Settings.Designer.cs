@@ -56,5 +56,15 @@ namespace EmexApp.Properties {
                 this["Password"] = value;
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://ws.emex.ru/EmExInmotion.asmx")]
+        public string EmexApp_EmExInmotion_EmExInmotion {
+            get {
+                return ((string)(this["EmexApp_EmExInmotion_EmExInmotion"]));
+            }
+        }
     }
 }

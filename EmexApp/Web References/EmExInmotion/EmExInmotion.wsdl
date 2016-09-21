@@ -1,0 +1,976 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="GetWholesalerInmotion">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="login" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="beginDate" nillable="true" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="endDate" nillable="true" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="greaterThenGlobalId" nillable="true" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="globalIds" type="tns:ArrayOfLong" />
+            <s:element minOccurs="0" maxOccurs="1" name="states" type="tns:ArrayOfInt" />
+            <s:element minOccurs="0" maxOccurs="1" name="reference" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="detailNum" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="timestamp" type="s:base64Binary" />
+            <s:element minOccurs="1" maxOccurs="1" name="activeOnly" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfLong">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="long" type="s:long" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfInt">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="int" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetWholesalerInmotionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetWholesalerInmotionResult" type="tns:ArrayOfInmWholesaler_v2" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfInmWholesaler_v2">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="InmWholesaler_v2" nillable="true" type="tns:InmWholesaler_v2" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="InmWholesaler_v2">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:InmConsumer_v2">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="AccPriceOrdOptRUR" nillable="true" type="s:decimal" />
+              <s:element minOccurs="1" maxOccurs="1" name="AccPriceLastOptRUR" nillable="true" type="s:decimal" />
+              <s:element minOccurs="1" maxOccurs="1" name="AccPriceOptFullRUR" nillable="true" type="s:decimal" />
+              <s:element minOccurs="1" maxOccurs="1" name="AccPriceOptCreditPayRUR" nillable="true" type="s:decimal" />
+              <s:element minOccurs="1" maxOccurs="1" name="AccRegPriceOpt" nillable="true" type="s:decimal" />
+              <s:element minOccurs="1" maxOccurs="1" name="AccRegPriceOptRUR" nillable="true" type="s:decimal" />
+              <s:element minOccurs="1" maxOccurs="1" name="AnsPriceOptRUR" nillable="true" type="s:decimal" />
+              <s:element minOccurs="1" maxOccurs="1" name="CoeffMaxAGREE" nillable="true" type="s:decimal" />
+              <s:element minOccurs="1" maxOccurs="1" name="DefPriceOpt" nillable="true" type="s:decimal" />
+              <s:element minOccurs="1" maxOccurs="1" name="DefPriceOptRUR" nillable="true" type="s:decimal" />
+              <s:element minOccurs="0" maxOccurs="1" name="OptovikReference" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="OrdPriceOpt" nillable="true" type="s:decimal" />
+              <s:element minOccurs="1" maxOccurs="1" name="OrdPriceOptRUR" nillable="true" type="s:decimal" />
+              <s:element minOccurs="1" maxOccurs="1" name="POrdDate" nillable="true" type="s:dateTime" />
+              <s:element minOccurs="1" maxOccurs="1" name="PriceRule" nillable="true" type="s:unsignedByte" />
+              <s:element minOccurs="1" maxOccurs="1" name="PriceOptPrevRUR" nillable="true" type="s:decimal" />
+              <s:element minOccurs="1" maxOccurs="1" name="PriceModifier" type="s:unsignedByte" />
+              <s:element minOccurs="1" maxOccurs="1" name="RecRegPriceOpt" nillable="true" type="s:decimal" />
+              <s:element minOccurs="1" maxOccurs="1" name="RecRegPriceOptRUR" nillable="true" type="s:decimal" />
+              <s:element minOccurs="1" maxOccurs="1" name="StorePay" nillable="true" type="s:decimal" />
+              <s:element minOccurs="1" maxOccurs="1" name="StorePayFact" nillable="true" type="s:decimal" />
+              <s:element minOccurs="0" maxOccurs="1" name="timestamp" type="s:base64Binary" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="InmConsumer_v2">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="AccPriceOrdPotrRUR" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="AccPriceLastPotrRUR" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="AccDate" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="AccQuantity" nillable="true" type="s:short" />
+          <s:element minOccurs="1" maxOccurs="1" name="AccRegDate" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="AccRegQuantity" nillable="true" type="s:short" />
+          <s:element minOccurs="1" maxOccurs="1" name="AnsDate" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="AnsQuantity" nillable="true" type="s:short" />
+          <s:element minOccurs="1" maxOccurs="1" name="bitONLY" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="bitQUAN" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="bitUNIT" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="bitAGRE" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="bitNOTC" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="bitWAITSTOC" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="bitWAIT" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="bitBRAND" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="bitREZE" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="DeliverTimeAverage" type="s:unsignedByte" />
+          <s:element minOccurs="1" maxOccurs="1" name="DeliverTimeGuarantee" type="s:unsignedByte" />
+          <s:element minOccurs="0" maxOccurs="1" name="DetailNum" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DetailNameRusUser" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DestinationLogo" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="DetailQuantity" type="s:short" />
+          <s:element minOccurs="1" maxOccurs="1" name="DenyQuantity" nillable="true" type="s:short" />
+          <s:element minOccurs="1" maxOccurs="1" name="DefDate" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="DefQuantity" nillable="true" type="s:short" />
+          <s:element minOccurs="1" maxOccurs="1" name="GlobalId" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="InvDate" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="InvQuantity" nillable="true" type="s:short" />
+          <s:element minOccurs="0" maxOccurs="1" name="MakeLogo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MakeName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="OrdDate" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="OrdQuantity" nillable="true" type="s:short" />
+          <s:element minOccurs="0" maxOccurs="1" name="OptovikLogo" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="PotrebitelId" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="PotrebitelReference" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PriceLogo" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="POrdQuantity" nillable="true" type="s:short" />
+          <s:element minOccurs="0" maxOccurs="1" name="PotrebitelName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PotrebitelLogo" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="PricePotPrevRUR" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="QuestionsCount" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="RecDate" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="RecQuantity" nillable="true" type="s:short" />
+          <s:element minOccurs="1" maxOccurs="1" name="RecRegDate" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="RecRegQuantity" nillable="true" type="s:short" />
+          <s:element minOccurs="1" maxOccurs="1" name="State" nillable="true" type="s:unsignedByte" />
+          <s:element minOccurs="0" maxOccurs="1" name="SubstMakeLogo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SubstMakeName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SubstDetailNum" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="StoreDatePlan" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="StoreDateFact" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="UserId" type="s:long" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetConsumerInmotion">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="login" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="beginDate" nillable="true" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="endDate" nillable="true" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="greaterThenGlobalId" nillable="true" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="globalIds" type="tns:ArrayOfLong" />
+            <s:element minOccurs="0" maxOccurs="1" name="states" type="tns:ArrayOfInt" />
+            <s:element minOccurs="0" maxOccurs="1" name="reference" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="detailNum" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="timestamp" type="s:base64Binary" />
+            <s:element minOccurs="1" maxOccurs="1" name="activeOnly" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetConsumerInmotionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetConsumerInmotionResult" type="tns:ArrayOfInmConsumer_v2" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfInmConsumer_v2">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="InmConsumer_v2" nillable="true" type="tns:InmConsumer_v2" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetConsumerInmotion3">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="login" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="beginDate" nillable="true" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="endDate" nillable="true" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="greaterThenGlobalId" nillable="true" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="globalIds" type="tns:ArrayOfLong" />
+            <s:element minOccurs="0" maxOccurs="1" name="states" type="tns:ArrayOfInt" />
+            <s:element minOccurs="0" maxOccurs="1" name="reference" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="detailNum" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="timestamp" type="s:base64Binary" />
+            <s:element minOccurs="1" maxOccurs="1" name="activeOnly" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetConsumerInmotion3Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetConsumerInmotion3Result" type="tns:ArrayOfInmConsumer_v3" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfInmConsumer_v3">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="InmConsumer_v3" nillable="true" type="tns:InmConsumer_v3" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="InmConsumer_v3">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:InmConsumer_v2">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="timestamp" type="s:base64Binary" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="InMotion_SubIdByGlobalId">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="login" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="GlobalId" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InMotion_SubIdByGlobalIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="InMotion_SubIdByGlobalIdResult" type="tns:ArrayOfLong" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetInmotionStateByGlobalId">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="login" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="setInmotionStateItems" type="tns:ArrayOfSetInmotionStateByGlobalIdInputItem" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfSetInmotionStateByGlobalIdInputItem">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="SetInmotionStateByGlobalIdInputItem" nillable="true" type="tns:SetInmotionStateByGlobalIdInputItem" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="SetInmotionStateByGlobalIdInputItem">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="GlobalId" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="Count" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="State" type="tns:SetInmotionStateEnum" />
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="SetInmotionStateEnum">
+        <s:restriction base="s:string">
+          <s:enumeration value="Inv" />
+          <s:enumeration value="Ans" />
+          <s:enumeration value="Ans0" />
+          <s:enumeration value="RecReg" />
+          <s:enumeration value="AccReg" />
+          <s:enumeration value="Lost" />
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="SetInmotionStateByGlobalIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SetInmotionStateByGlobalIdResult" type="tns:ArrayOfSetInmotionStateByGlobalIdOutputItem" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfSetInmotionStateByGlobalIdOutputItem">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="SetInmotionStateByGlobalIdOutputItem" nillable="true" type="tns:SetInmotionStateByGlobalIdOutputItem" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="SetInmotionStateByGlobalIdOutputItem">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="GlobalId" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="Count" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="ErrorCode" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrorMessage" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SetInmotionStateBySubId">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="login" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="setInmotionStateItems" type="tns:ArrayOfSetInmotionStateBySubIdInputItem" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfSetInmotionStateBySubIdInputItem">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="SetInmotionStateBySubIdInputItem" nillable="true" type="tns:SetInmotionStateBySubIdInputItem" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="SetInmotionStateBySubIdInputItem">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="SubId" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="Portion" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="State" type="tns:SetInmotionStateEnum" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SetInmotionStateBySubIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SetInmotionStateBySubIdResult" type="tns:ArrayOfSetInmotionStateBySubIdOutputItem" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfSetInmotionStateBySubIdOutputItem">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="SetInmotionStateBySubIdOutputItem" nillable="true" type="tns:SetInmotionStateBySubIdOutputItem" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="SetInmotionStateBySubIdOutputItem">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="SubId" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="Portion" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="ErrorCode" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrorMessage" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetWholesalerInmotion_Test">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="login" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="beginDateString" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="endDateString" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="greaterThenGlobalIdString" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="globalIdsString" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="statesString" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="reference" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="detailNum" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="timestampString" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="activeOnly" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetWholesalerInmotion_TestResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetWholesalerInmotion_TestResult" type="tns:ArrayOfInmWholesaler_v2" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetConsumerInmotion_Test">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="login" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="beginDateString" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="endDateString" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="greaterThenGlobalIdString" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="globalIdsString" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="statesString" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="reference" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="detailNum" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="timestampString" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="activeOnly" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetConsumerInmotion_TestResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetConsumerInmotion_TestResult" type="tns:ArrayOfInmConsumer_v2" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetConsumerInmotion3_Test">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="login" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="beginDateString" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="endDateString" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="greaterThenGlobalIdString" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="globalIdsString" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="statesString" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="reference" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="detailNum" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="timestampString" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="activeOnly" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetConsumerInmotion3_TestResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetConsumerInmotion3_TestResult" type="tns:ArrayOfInmConsumer_v3" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TestConnect">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="s" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TestConnectResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TestConnectResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ArrayOfLong" nillable="true" type="tns:ArrayOfLong" />
+      <s:element name="ArrayOfInmWholesaler_v2" nillable="true" type="tns:ArrayOfInmWholesaler_v2" />
+      <s:element name="ArrayOfInmConsumer_v2" nillable="true" type="tns:ArrayOfInmConsumer_v2" />
+      <s:element name="ArrayOfInmConsumer_v3" nillable="true" type="tns:ArrayOfInmConsumer_v3" />
+      <s:element name="string" nillable="true" type="s:string" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetWholesalerInmotionSoapIn">
+    <wsdl:part name="parameters" element="tns:GetWholesalerInmotion" />
+  </wsdl:message>
+  <wsdl:message name="GetWholesalerInmotionSoapOut">
+    <wsdl:part name="parameters" element="tns:GetWholesalerInmotionResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetConsumerInmotionSoapIn">
+    <wsdl:part name="parameters" element="tns:GetConsumerInmotion" />
+  </wsdl:message>
+  <wsdl:message name="GetConsumerInmotionSoapOut">
+    <wsdl:part name="parameters" element="tns:GetConsumerInmotionResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetConsumerInmotion3SoapIn">
+    <wsdl:part name="parameters" element="tns:GetConsumerInmotion3" />
+  </wsdl:message>
+  <wsdl:message name="GetConsumerInmotion3SoapOut">
+    <wsdl:part name="parameters" element="tns:GetConsumerInmotion3Response" />
+  </wsdl:message>
+  <wsdl:message name="InMotion_SubIdByGlobalIdSoapIn">
+    <wsdl:part name="parameters" element="tns:InMotion_SubIdByGlobalId" />
+  </wsdl:message>
+  <wsdl:message name="InMotion_SubIdByGlobalIdSoapOut">
+    <wsdl:part name="parameters" element="tns:InMotion_SubIdByGlobalIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetInmotionStateByGlobalIdSoapIn">
+    <wsdl:part name="parameters" element="tns:SetInmotionStateByGlobalId" />
+  </wsdl:message>
+  <wsdl:message name="SetInmotionStateByGlobalIdSoapOut">
+    <wsdl:part name="parameters" element="tns:SetInmotionStateByGlobalIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetInmotionStateBySubIdSoapIn">
+    <wsdl:part name="parameters" element="tns:SetInmotionStateBySubId" />
+  </wsdl:message>
+  <wsdl:message name="SetInmotionStateBySubIdSoapOut">
+    <wsdl:part name="parameters" element="tns:SetInmotionStateBySubIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetWholesalerInmotion_TestSoapIn">
+    <wsdl:part name="parameters" element="tns:GetWholesalerInmotion_Test" />
+  </wsdl:message>
+  <wsdl:message name="GetWholesalerInmotion_TestSoapOut">
+    <wsdl:part name="parameters" element="tns:GetWholesalerInmotion_TestResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetConsumerInmotion_TestSoapIn">
+    <wsdl:part name="parameters" element="tns:GetConsumerInmotion_Test" />
+  </wsdl:message>
+  <wsdl:message name="GetConsumerInmotion_TestSoapOut">
+    <wsdl:part name="parameters" element="tns:GetConsumerInmotion_TestResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetConsumerInmotion3_TestSoapIn">
+    <wsdl:part name="parameters" element="tns:GetConsumerInmotion3_Test" />
+  </wsdl:message>
+  <wsdl:message name="GetConsumerInmotion3_TestSoapOut">
+    <wsdl:part name="parameters" element="tns:GetConsumerInmotion3_TestResponse" />
+  </wsdl:message>
+  <wsdl:message name="TestConnectSoapIn">
+    <wsdl:part name="parameters" element="tns:TestConnect" />
+  </wsdl:message>
+  <wsdl:message name="TestConnectSoapOut">
+    <wsdl:part name="parameters" element="tns:TestConnectResponse" />
+  </wsdl:message>
+  <wsdl:message name="InMotion_SubIdByGlobalIdHttpGetIn">
+    <wsdl:part name="login" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+    <wsdl:part name="GlobalId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="InMotion_SubIdByGlobalIdHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfLong" />
+  </wsdl:message>
+  <wsdl:message name="GetWholesalerInmotion_TestHttpGetIn">
+    <wsdl:part name="login" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+    <wsdl:part name="beginDateString" type="s:string" />
+    <wsdl:part name="endDateString" type="s:string" />
+    <wsdl:part name="greaterThenGlobalIdString" type="s:string" />
+    <wsdl:part name="globalIdsString" type="s:string" />
+    <wsdl:part name="statesString" type="s:string" />
+    <wsdl:part name="reference" type="s:string" />
+    <wsdl:part name="detailNum" type="s:string" />
+    <wsdl:part name="timestampString" type="s:string" />
+    <wsdl:part name="activeOnly" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetWholesalerInmotion_TestHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfInmWholesaler_v2" />
+  </wsdl:message>
+  <wsdl:message name="GetConsumerInmotion_TestHttpGetIn">
+    <wsdl:part name="login" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+    <wsdl:part name="beginDateString" type="s:string" />
+    <wsdl:part name="endDateString" type="s:string" />
+    <wsdl:part name="greaterThenGlobalIdString" type="s:string" />
+    <wsdl:part name="globalIdsString" type="s:string" />
+    <wsdl:part name="statesString" type="s:string" />
+    <wsdl:part name="reference" type="s:string" />
+    <wsdl:part name="detailNum" type="s:string" />
+    <wsdl:part name="timestampString" type="s:string" />
+    <wsdl:part name="activeOnly" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetConsumerInmotion_TestHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfInmConsumer_v2" />
+  </wsdl:message>
+  <wsdl:message name="GetConsumerInmotion3_TestHttpGetIn">
+    <wsdl:part name="login" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+    <wsdl:part name="beginDateString" type="s:string" />
+    <wsdl:part name="endDateString" type="s:string" />
+    <wsdl:part name="greaterThenGlobalIdString" type="s:string" />
+    <wsdl:part name="globalIdsString" type="s:string" />
+    <wsdl:part name="statesString" type="s:string" />
+    <wsdl:part name="reference" type="s:string" />
+    <wsdl:part name="detailNum" type="s:string" />
+    <wsdl:part name="timestampString" type="s:string" />
+    <wsdl:part name="activeOnly" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetConsumerInmotion3_TestHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfInmConsumer_v3" />
+  </wsdl:message>
+  <wsdl:message name="TestConnectHttpGetIn">
+    <wsdl:part name="s" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="TestConnectHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="InMotion_SubIdByGlobalIdHttpPostIn">
+    <wsdl:part name="login" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+    <wsdl:part name="GlobalId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="InMotion_SubIdByGlobalIdHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfLong" />
+  </wsdl:message>
+  <wsdl:message name="GetWholesalerInmotion_TestHttpPostIn">
+    <wsdl:part name="login" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+    <wsdl:part name="beginDateString" type="s:string" />
+    <wsdl:part name="endDateString" type="s:string" />
+    <wsdl:part name="greaterThenGlobalIdString" type="s:string" />
+    <wsdl:part name="globalIdsString" type="s:string" />
+    <wsdl:part name="statesString" type="s:string" />
+    <wsdl:part name="reference" type="s:string" />
+    <wsdl:part name="detailNum" type="s:string" />
+    <wsdl:part name="timestampString" type="s:string" />
+    <wsdl:part name="activeOnly" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetWholesalerInmotion_TestHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfInmWholesaler_v2" />
+  </wsdl:message>
+  <wsdl:message name="GetConsumerInmotion_TestHttpPostIn">
+    <wsdl:part name="login" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+    <wsdl:part name="beginDateString" type="s:string" />
+    <wsdl:part name="endDateString" type="s:string" />
+    <wsdl:part name="greaterThenGlobalIdString" type="s:string" />
+    <wsdl:part name="globalIdsString" type="s:string" />
+    <wsdl:part name="statesString" type="s:string" />
+    <wsdl:part name="reference" type="s:string" />
+    <wsdl:part name="detailNum" type="s:string" />
+    <wsdl:part name="timestampString" type="s:string" />
+    <wsdl:part name="activeOnly" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetConsumerInmotion_TestHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfInmConsumer_v2" />
+  </wsdl:message>
+  <wsdl:message name="GetConsumerInmotion3_TestHttpPostIn">
+    <wsdl:part name="login" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+    <wsdl:part name="beginDateString" type="s:string" />
+    <wsdl:part name="endDateString" type="s:string" />
+    <wsdl:part name="greaterThenGlobalIdString" type="s:string" />
+    <wsdl:part name="globalIdsString" type="s:string" />
+    <wsdl:part name="statesString" type="s:string" />
+    <wsdl:part name="reference" type="s:string" />
+    <wsdl:part name="detailNum" type="s:string" />
+    <wsdl:part name="timestampString" type="s:string" />
+    <wsdl:part name="activeOnly" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetConsumerInmotion3_TestHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfInmConsumer_v3" />
+  </wsdl:message>
+  <wsdl:message name="TestConnectHttpPostIn">
+    <wsdl:part name="s" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="TestConnectHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:portType name="EmExInmotionSoap">
+    <wsdl:operation name="GetWholesalerInmotion">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Возвращает движение оптовика. &lt;a href ='http://wsdoc.emex.ru/webframe.html?GetWholesalerInmotion.html' target = '_blank'&gt;Подробнее...&lt;/a&gt;</wsdl:documentation>
+      <wsdl:input message="tns:GetWholesalerInmotionSoapIn" />
+      <wsdl:output message="tns:GetWholesalerInmotionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetConsumerInmotion">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Возвращает движение потребителя. &lt;a href ='http://wsdoc.emex.ru/webframe.html?GetConsumerInmotion.html' target = '_blank'&gt;Подробнее...&lt;/a&gt;</wsdl:documentation>
+      <wsdl:input message="tns:GetConsumerInmotionSoapIn" />
+      <wsdl:output message="tns:GetConsumerInmotionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetConsumerInmotion3">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Возвращает движение потребителя. &lt;a href ='http://wsdoc.emex.ru/webframe.html?GetConsumerInmotion3.html' target = '_blank'&gt;Подробнее...&lt;/a&gt;</wsdl:documentation>
+      <wsdl:input message="tns:GetConsumerInmotion3SoapIn" />
+      <wsdl:output message="tns:GetConsumerInmotion3SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InMotion_SubIdByGlobalId">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Возвращает номера заказов для данной позиции движения. &lt;a href ='http://wsdoc.emex.ru/webframe.html?InMotion_SubIdByGlobalId.html' target = '_blank'&gt;Подробнее...&lt;/a&gt;</wsdl:documentation>
+      <wsdl:input message="tns:InMotion_SubIdByGlobalIdSoapIn" />
+      <wsdl:output message="tns:InMotion_SubIdByGlobalIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetInmotionStateByGlobalId">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Задаёт состояния заказов по уникальным идентификаторам движения. &lt;a href ='http://wsdoc.emex.ru/webframe.html?SetInmotionStateByGlobalId.html' target = '_blank'&gt;Подробнее...&lt;/a&gt;</wsdl:documentation>
+      <wsdl:input message="tns:SetInmotionStateByGlobalIdSoapIn" />
+      <wsdl:output message="tns:SetInmotionStateByGlobalIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetInmotionStateBySubId">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Задаёт состояния заказов по их SubId. &lt;a href ='http://wsdoc.emex.ru/webframe.html?SetInmotionStateBySubId.html' target = '_blank'&gt;Подробнее...&lt;/a&gt;</wsdl:documentation>
+      <wsdl:input message="tns:SetInmotionStateBySubIdSoapIn" />
+      <wsdl:output message="tns:SetInmotionStateBySubIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetWholesalerInmotion_Test">
+      <wsdl:input message="tns:GetWholesalerInmotion_TestSoapIn" />
+      <wsdl:output message="tns:GetWholesalerInmotion_TestSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetConsumerInmotion_Test">
+      <wsdl:input message="tns:GetConsumerInmotion_TestSoapIn" />
+      <wsdl:output message="tns:GetConsumerInmotion_TestSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetConsumerInmotion3_Test">
+      <wsdl:input message="tns:GetConsumerInmotion3_TestSoapIn" />
+      <wsdl:output message="tns:GetConsumerInmotion3_TestSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TestConnect">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Тестирование сервиса.</wsdl:documentation>
+      <wsdl:input message="tns:TestConnectSoapIn" />
+      <wsdl:output message="tns:TestConnectSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="EmExInmotionHttpGet">
+    <wsdl:operation name="InMotion_SubIdByGlobalId">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Возвращает номера заказов для данной позиции движения. &lt;a href ='http://wsdoc.emex.ru/webframe.html?InMotion_SubIdByGlobalId.html' target = '_blank'&gt;Подробнее...&lt;/a&gt;</wsdl:documentation>
+      <wsdl:input message="tns:InMotion_SubIdByGlobalIdHttpGetIn" />
+      <wsdl:output message="tns:InMotion_SubIdByGlobalIdHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetWholesalerInmotion_Test">
+      <wsdl:input message="tns:GetWholesalerInmotion_TestHttpGetIn" />
+      <wsdl:output message="tns:GetWholesalerInmotion_TestHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetConsumerInmotion_Test">
+      <wsdl:input message="tns:GetConsumerInmotion_TestHttpGetIn" />
+      <wsdl:output message="tns:GetConsumerInmotion_TestHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetConsumerInmotion3_Test">
+      <wsdl:input message="tns:GetConsumerInmotion3_TestHttpGetIn" />
+      <wsdl:output message="tns:GetConsumerInmotion3_TestHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TestConnect">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Тестирование сервиса.</wsdl:documentation>
+      <wsdl:input message="tns:TestConnectHttpGetIn" />
+      <wsdl:output message="tns:TestConnectHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="EmExInmotionHttpPost">
+    <wsdl:operation name="InMotion_SubIdByGlobalId">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Возвращает номера заказов для данной позиции движения. &lt;a href ='http://wsdoc.emex.ru/webframe.html?InMotion_SubIdByGlobalId.html' target = '_blank'&gt;Подробнее...&lt;/a&gt;</wsdl:documentation>
+      <wsdl:input message="tns:InMotion_SubIdByGlobalIdHttpPostIn" />
+      <wsdl:output message="tns:InMotion_SubIdByGlobalIdHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetWholesalerInmotion_Test">
+      <wsdl:input message="tns:GetWholesalerInmotion_TestHttpPostIn" />
+      <wsdl:output message="tns:GetWholesalerInmotion_TestHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetConsumerInmotion_Test">
+      <wsdl:input message="tns:GetConsumerInmotion_TestHttpPostIn" />
+      <wsdl:output message="tns:GetConsumerInmotion_TestHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetConsumerInmotion3_Test">
+      <wsdl:input message="tns:GetConsumerInmotion3_TestHttpPostIn" />
+      <wsdl:output message="tns:GetConsumerInmotion3_TestHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TestConnect">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Тестирование сервиса.</wsdl:documentation>
+      <wsdl:input message="tns:TestConnectHttpPostIn" />
+      <wsdl:output message="tns:TestConnectHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="EmExInmotionSoap" type="tns:EmExInmotionSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetWholesalerInmotion">
+      <soap:operation soapAction="http://tempuri.org/GetWholesalerInmotion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetConsumerInmotion">
+      <soap:operation soapAction="http://tempuri.org/GetConsumerInmotion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetConsumerInmotion3">
+      <soap:operation soapAction="http://tempuri.org/GetConsumerInmotion3" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InMotion_SubIdByGlobalId">
+      <soap:operation soapAction="http://tempuri.org/InMotion_SubIdByGlobalId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetInmotionStateByGlobalId">
+      <soap:operation soapAction="http://tempuri.org/SetInmotionStateByGlobalId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetInmotionStateBySubId">
+      <soap:operation soapAction="http://tempuri.org/SetInmotionStateBySubId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWholesalerInmotion_Test">
+      <soap:operation soapAction="http://tempuri.org/GetWholesalerInmotion_Test" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetConsumerInmotion_Test">
+      <soap:operation soapAction="http://tempuri.org/GetConsumerInmotion_Test" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetConsumerInmotion3_Test">
+      <soap:operation soapAction="http://tempuri.org/GetConsumerInmotion3_Test" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TestConnect">
+      <soap:operation soapAction="http://tempuri.org/TestConnect" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="EmExInmotionSoap12" type="tns:EmExInmotionSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetWholesalerInmotion">
+      <soap12:operation soapAction="http://tempuri.org/GetWholesalerInmotion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetConsumerInmotion">
+      <soap12:operation soapAction="http://tempuri.org/GetConsumerInmotion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetConsumerInmotion3">
+      <soap12:operation soapAction="http://tempuri.org/GetConsumerInmotion3" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InMotion_SubIdByGlobalId">
+      <soap12:operation soapAction="http://tempuri.org/InMotion_SubIdByGlobalId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetInmotionStateByGlobalId">
+      <soap12:operation soapAction="http://tempuri.org/SetInmotionStateByGlobalId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetInmotionStateBySubId">
+      <soap12:operation soapAction="http://tempuri.org/SetInmotionStateBySubId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWholesalerInmotion_Test">
+      <soap12:operation soapAction="http://tempuri.org/GetWholesalerInmotion_Test" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetConsumerInmotion_Test">
+      <soap12:operation soapAction="http://tempuri.org/GetConsumerInmotion_Test" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetConsumerInmotion3_Test">
+      <soap12:operation soapAction="http://tempuri.org/GetConsumerInmotion3_Test" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TestConnect">
+      <soap12:operation soapAction="http://tempuri.org/TestConnect" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="EmExInmotionHttpGet" type="tns:EmExInmotionHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="InMotion_SubIdByGlobalId">
+      <http:operation location="/InMotion_SubIdByGlobalId" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWholesalerInmotion_Test">
+      <http:operation location="/GetWholesalerInmotion_Test" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetConsumerInmotion_Test">
+      <http:operation location="/GetConsumerInmotion_Test" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetConsumerInmotion3_Test">
+      <http:operation location="/GetConsumerInmotion3_Test" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TestConnect">
+      <http:operation location="/TestConnect" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="EmExInmotionHttpPost" type="tns:EmExInmotionHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="InMotion_SubIdByGlobalId">
+      <http:operation location="/InMotion_SubIdByGlobalId" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWholesalerInmotion_Test">
+      <http:operation location="/GetWholesalerInmotion_Test" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetConsumerInmotion_Test">
+      <http:operation location="/GetConsumerInmotion_Test" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetConsumerInmotion3_Test">
+      <http:operation location="/GetConsumerInmotion3_Test" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TestConnect">
+      <http:operation location="/TestConnect" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="EmExInmotion">
+    <wsdl:port name="EmExInmotionSoap" binding="tns:EmExInmotionSoap">
+      <soap:address location="http://ws.emex.ru/EmExInmotion.asmx" />
+    </wsdl:port>
+    <wsdl:port name="EmExInmotionSoap12" binding="tns:EmExInmotionSoap12">
+      <soap12:address location="http://ws.emex.ru/EmExInmotion.asmx" />
+    </wsdl:port>
+    <wsdl:port name="EmExInmotionHttpGet" binding="tns:EmExInmotionHttpGet">
+      <http:address location="http://ws.emex.ru/EmExInmotion.asmx" />
+    </wsdl:port>
+    <wsdl:port name="EmExInmotionHttpPost" binding="tns:EmExInmotionHttpPost">
+      <http:address location="http://ws.emex.ru/EmExInmotion.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

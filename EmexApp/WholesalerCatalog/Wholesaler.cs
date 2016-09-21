@@ -21,16 +21,46 @@ namespace EmexApp
 
         public List<string> WholesalerRepresentationList()
         {
-            throw new NotImplementedException();
+            Consumer consumerObject = new Consumer();
+            EmExDictionaries.EmExDictionaries emexServices = new EmExDictionaries.EmExDictionaries();
+            EmExDictionaries.ConsumerInfo[] clientsList = emexServices.GetConsumersDict(consumerObject.login, consumerObject.password, null);
+            List<string> representationList = new List<string>();
+            foreach (EmExDictionaries.ConsumerInfo consumerElement in clientsList)
+            {
+                StringBuilder WholesalerRepresentation = new StringBuilder();
+                WholesalerRepresentation.Append(consumerElement.UserLogo);
+                WholesalerRepresentation.Append(" (");
+                WholesalerRepresentation.Append(consumerElement.UserFamily);
+                WholesalerRepresentation.Append(consumerElement.UserFirstName);
+                WholesalerRepresentation.Append(consumerElement.UserLastName);
+                WholesalerRepresentation.Append(")");
+                representationList.Add(WholesalerRepresentation.ToString());
+            }
+            return representationList;
         }
 
         private void IniteWholesalerList()
         {
+            WholesalerList = new List<StaticVariables.WholesalerElement>();
+            StaticVariables.WholesalerElement Wholesaler;
+            Consumer consumerObject = new Consumer();
             EmExDictionaries.EmExDictionaries emexServices = new EmExDictionaries.EmExDictionaries();
-            EmExDictionaries.ConsumerInfo[] clientsList = emexServices.GetConsumersDict(112, "341292ast", null);
-            foreach (EmExDictionaries.ConsumerInfo elements in clientsList)
+            EmExDictionaries.ConsumerInfo[] clientsList = emexServices.GetConsumersDict(consumerObject.login, consumerObject.password, null);
+            foreach (EmExDictionaries.ConsumerInfo element in clientsList)
             {
-                //cbClients.Items.Add(elements.UserLogo);
+                Wholesaler = new StaticVariables.WholesalerElement();
+                Wholesaler.UserId = element.UserId;
+                Wholesaler.ConsumerId = element.ConsumerId;
+                Wholesaler.UserFamily = element.UserFamily;
+                Wholesaler.UserFirstName = element.UserFirstName;
+                Wholesaler.UserLastName = element.UserLastName;
+                Wholesaler.UserLogo = element.UserLogo;
+                Wholesaler.LocationId = element.LocationId;
+                Wholesaler.LocationAddress = element.LocationAddress;
+                Wholesaler.LocationAddressAdditional = element.LocationAddressAdditional;
+                Wholesaler.OptovikManagerId = element.OptovikManagerId;
+                Wholesaler.OptovikManagerFio = element.OptovikManagerFio;
+                WholesalerList.Add(Wholesaler);
             }
         }
     }

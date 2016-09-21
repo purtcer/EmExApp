@@ -8,6 +8,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("web%20references/emexdictionaries/emexdictionaries.disco")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("web%20references/emexinmotion/emexinmotion.disco")]
 
 

@@ -34,12 +34,12 @@ namespace EmexApp
             InmConsumerElement.DestinationLogo = "WMS";
             InmConsumerElement.GlobalId = 111111;
             InmConsumerElement.MakeLogo = "TY";
-            InmConsumerElement.PotrebitelId = "111";
+            InmConsumerElement.PotrebitelId = 111;
             InmConsumerElement.PotrebitelReference = "111";
             InmConsumerElement.PriceLogo = "WMS";
             InmConsumerElement.PotrebitelName = "111";
             InmConsumerElement.UserId = 112;
-            InmConsumerElement.timestamp = "111";
+            //InmConsumerElement.timestamp = 111;
             MainInmConsumerList.Add(InmConsumerElement);
 
             InmConsumerElement = new InmConsumerDefault();
@@ -51,12 +51,12 @@ namespace EmexApp
             InmConsumerElement.DestinationLogo = "TMS";
             InmConsumerElement.GlobalId = 2222222;
             InmConsumerElement.MakeLogo = "MC";
-            InmConsumerElement.PotrebitelId = "222";
+            InmConsumerElement.PotrebitelId = 222;
             InmConsumerElement.PotrebitelReference = "222";
             InmConsumerElement.PriceLogo = "TMS";
             InmConsumerElement.PotrebitelName = "222";
             InmConsumerElement.UserId = 112;
-            InmConsumerElement.timestamp = "222";
+            //InmConsumerElement.timestamp = "222";
             MainInmConsumerList.Add(InmConsumerElement);
 
             InmConsumerElement = new InmConsumerDefault();
@@ -68,12 +68,12 @@ namespace EmexApp
             InmConsumerElement.DestinationLogo = "YMS";
             InmConsumerElement.GlobalId = 111111;
             InmConsumerElement.MakeLogo = "NS";
-            InmConsumerElement.PotrebitelId = "333";
+            InmConsumerElement.PotrebitelId = 333;
             InmConsumerElement.PotrebitelReference = "333";
             InmConsumerElement.PriceLogo = "YMS";
             InmConsumerElement.PotrebitelName = "333";
             InmConsumerElement.UserId = 112;
-            InmConsumerElement.timestamp = "333";
+            //InmConsumerElement.timestamp = "333";
             MainInmConsumerList.Add(InmConsumerElement);
 
             InmConsumerElement = new InmConsumerDefault();
@@ -85,12 +85,12 @@ namespace EmexApp
             InmConsumerElement.DestinationLogo = "EMS";
             InmConsumerElement.GlobalId = 4444444;
             InmConsumerElement.MakeLogo = "MZ";
-            InmConsumerElement.PotrebitelId = "444";
+            InmConsumerElement.PotrebitelId = 444;
             InmConsumerElement.PotrebitelReference = "444";
             InmConsumerElement.PriceLogo = "EMS";
             InmConsumerElement.PotrebitelName = "444";
             InmConsumerElement.UserId = 112;
-            InmConsumerElement.timestamp = "444";
+            //InmConsumerElement.timestamp = "444";
             MainInmConsumerList.Add(InmConsumerElement);
         }
     }

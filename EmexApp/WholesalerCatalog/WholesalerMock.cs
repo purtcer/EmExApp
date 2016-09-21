@@ -48,10 +48,10 @@ namespace EmexApp
             Wholesaler.UserFirstName = "Иван";
             Wholesaler.UserLastName = "Иванович";
             Wholesaler.UserLogo = "Иванов";
-            Wholesaler.LocationId = "Астрахань";
+            Wholesaler.LocationId = 1;
             Wholesaler.LocationAddress = "город Астрахань";
             Wholesaler.LocationAddressAdditional = "Астраханб снова";
-            Wholesaler.OptovikManagerId = "Иванов продавец";
+            Wholesaler.OptovikManagerId = 1;
             Wholesaler.OptovikManagerFio = "Иванов Иван продавец";
             WholesalerList.Add(Wholesaler);
 
@@ -62,10 +62,10 @@ namespace EmexApp
             Wholesaler.UserFirstName = "Петр";
             Wholesaler.UserLastName = "Петрович";
             Wholesaler.UserLogo = "Иванов";
-            Wholesaler.LocationId = "Волгоград";
+            Wholesaler.LocationId = 1;
             Wholesaler.LocationAddress = "город Волгоград";
             Wholesaler.LocationAddressAdditional = "Волгоград снова";
-            Wholesaler.OptovikManagerId = "Петров продавец";
+            Wholesaler.OptovikManagerId = 1;
             Wholesaler.OptovikManagerFio = "Петров Петр продавец";
             WholesalerList.Add(Wholesaler);
 
@@ -76,10 +76,10 @@ namespace EmexApp
             Wholesaler.UserFirstName = "Федор";
             Wholesaler.UserLastName = "Федорович";
             Wholesaler.UserLogo = "Федоров";
-            Wholesaler.LocationId = "Москва";
+            Wholesaler.LocationId = 1;
             Wholesaler.LocationAddress = "город Москва";
             Wholesaler.LocationAddressAdditional = "Москва снова";
-            Wholesaler.OptovikManagerId = "Федоров продавец";
+            Wholesaler.OptovikManagerId = 1;
             Wholesaler.OptovikManagerFio = "Федоров Федор продавец";
             WholesalerList.Add(Wholesaler);
         }
