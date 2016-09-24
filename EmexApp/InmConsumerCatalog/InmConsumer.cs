@@ -9,15 +9,25 @@ namespace EmexApp
     class InmConsumer : IInmConsumer
     {
         List<InmConsumerDefault> MainInmConsumerList;
+        IWholesaler whosalerObject;
 
-        public InmConsumer()
+        public InmConsumer(IWholesaler whosalerObject)
         {
+            this.whosalerObject = whosalerObject;
             IniteInmConsumerList();
         }
 
         public List<InmConsumerDefault> InmConsumerList(StaticVariables.WholesalerElement WholesalerElement)
         {
-            throw new NotImplementedException();
+            List<InmConsumerDefault> inmConsumerList = new List<InmConsumerDefault>();
+            foreach (InmConsumerDefault inmConsumerElement in MainInmConsumerList)
+            {
+                if (inmConsumerElement.PotrebitelId == WholesalerElement.ConsumerId)
+                {
+                    inmConsumerList.Add(inmConsumerElement);
+                }
+            }
+            return inmConsumerList;
         }
 
         private void IniteInmConsumerList()
@@ -35,7 +45,7 @@ namespace EmexApp
                 InmConsumerElement.DetailNameRusUser = inmConsumerElement.DetailNameRusUser;
                 InmConsumerElement.AccPriceOrdPotrRUR = (decimal)inmConsumerElement.AccPriceOrdPotrRUR;
                 InmConsumerElement.AccPriceLastPotrRUR = (decimal)inmConsumerElement.AccPriceLastPotrRUR;
-                InmConsumerElement.AccQuantity = (short)inmConsumerElement.AccQuantity;
+                InmConsumerElement.AccQuantity = (short)inmConsumerElement.DetailQuantity;
                 InmConsumerElement.DestinationLogo = inmConsumerElement.DestinationLogo;
                 InmConsumerElement.GlobalId = inmConsumerElement.GlobalId;
                 InmConsumerElement.MakeLogo = inmConsumerElement.MakeLogo;
@@ -45,6 +55,7 @@ namespace EmexApp
                 InmConsumerElement.PotrebitelName = inmConsumerElement.PotrebitelName;
                 InmConsumerElement.UserId = inmConsumerElement.UserId;
                 MainInmConsumerList.Add(InmConsumerElement);
+                whosalerObject.AddWholesalerElement(inmConsumerElement);
             }
         }
     }

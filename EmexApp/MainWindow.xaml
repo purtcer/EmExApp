@@ -5,32 +5,23 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:EmexApp"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="MainWindow" Height="350" Width="600">
     <Grid>
         <StackPanel Orientation="Horizontal" Height="30" VerticalAlignment="Top" Width="515" HorizontalAlignment="Left">
             <Label x:Name="lblClients" Content="Оптовик" HorizontalAlignment="Left" Margin="2,1,0,0" VerticalAlignment="Top"/>
             <ComboBox x:Name="cbClients" HorizontalAlignment="Left" Margin="2,4,0,0" VerticalAlignment="Top" Width="280" SelectionChanged="cbClients_SelectionChanged"/>
-            <Button x:Name="btnPrint" Content="Печать" HorizontalAlignment="Left" Margin="2,4,0,0" VerticalAlignment="Top" Width="60" Click="btnPrint_Click"/>
-            <Button x:Name="btnSend" Content="Отправить" HorizontalAlignment="Left" Margin="2,4,0,0" VerticalAlignment="Top" Width="70" Click="btnSend_Click" />
-            <Button x:Name="btnSettings" Content="TT" HorizontalAlignment="Left" Margin="2,4,0,0" VerticalAlignment="Top" Width="25" Click="btnSettings_Click"/>
+            <Button x:Name="btnPrint" Content="Печать" HorizontalAlignment="Left" Margin="2,5,0,0" VerticalAlignment="Top" Width="60" Click="btnPrint_Click"/>
+            <Button x:Name="btnSend" Content="Отправить" HorizontalAlignment="Left" Margin="2,5,0,0" VerticalAlignment="Top" Width="70" Click="btnSend_Click" />
+            <Button x:Name="btnSettings" Content="TT" HorizontalAlignment="Left" Margin="2,5,0,0" VerticalAlignment="Top" Width="25" Click="btnSettings_Click"/>
         </StackPanel>
         <DataGrid x:Name="dgInmConsumer" Margin="1,32,1,1" AutoGenerateColumns="False" CanUserResizeRows="False" CanUserAddRows="False" IsManipulationEnabled="True">
             <DataGrid.Columns>
                 <DataGridCheckBoxColumn Header="Выдано" Binding="{Binding Path=IsChecked}" IsReadOnly="False"/>
                 <DataGridTextColumn Header="Номер детали" Binding="{Binding Path=DetailNum}" IsReadOnly="True"/>
                 <DataGridTextColumn Header="Название" Binding="{Binding Path=DetailNameRusUser}" IsReadOnly="True"/>
-                <DataGridTextColumn Header="Начальная цена" Binding="{Binding Path=AccPriceOrdPotrRUR}" IsReadOnly="True"/>
-                <DataGridTextColumn Header="КонечнаяЦена" Binding="{Binding Path=AccPriceLastPotrRUR}" IsReadOnly="True"/>
                 <DataGridTextColumn Header="Количество" Binding="{Binding Path=AccQuantity}" IsReadOnly="False"/>
-                <DataGridTextColumn Header="Лого доставки" Binding="{Binding Path=DestinationLogo}" IsReadOnly="True"/>
-                <DataGridTextColumn Header="Идентификатор заказа" Binding="{Binding Path=DetailNum}" IsReadOnly="True"/>
-                <DataGridTextColumn Header="Марка" Binding="{Binding Path=MakeLogo}" IsReadOnly="True"/>
-                <DataGridTextColumn Header="Потребитель" Binding="{Binding Path=PotrebitelId}" IsReadOnly="True"/>
+                <DataGridTextColumn Header="КонечнаяЦена" Binding="{Binding Path=AccPriceLastPotrRUR}" IsReadOnly="True"/>
                 <DataGridTextColumn Header="Референс" Binding="{Binding Path=PotrebitelReference}" IsReadOnly="True"/>
-                <DataGridTextColumn Header="Лого поставщика" Binding="{Binding Path=PriceLogo}" IsReadOnly="True"/>
-                <DataGridTextColumn Header="Потребитель" Binding="{Binding Path=PotrebitelName}" IsReadOnly="True"/>
-                <DataGridTextColumn Header="Пользователь" Binding="{Binding Path=UserId}" IsReadOnly="True"/>
-                <DataGridTextColumn Header="Метка времени" Binding="{Binding Path=timestamp}" IsReadOnly="True"/>
             </DataGrid.Columns>
         </DataGrid>
     </Grid>

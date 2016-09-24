@@ -51,9 +51,14 @@ namespace EmexApp
             {
                 Wholesaler = new WholesalerMock();
             }
-            
-                InmConsumer = new InmConsumer();
-            
+            //try
+            //{
+                InmConsumer = new InmConsumer(Wholesaler);
+            //}
+            //catch
+            //{
+            //    InmConsumer = new InmConsumerMock();
+            //}
             try
             {
                 Inmotion = new Inmotion();

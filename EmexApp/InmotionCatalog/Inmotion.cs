@@ -30,7 +30,7 @@ namespace EmexApp
                     inputItem.State = EmExInmotion.SetInmotionStateEnum.AccReg;
                     EmExInmotion.SetInmotionStateByGlobalIdInputItem[] inputItems = new EmExInmotion.SetInmotionStateByGlobalIdInputItem[1];
                     inputItems[0] = inputItem;
-                    emexInmotion.SetInmotionStateByGlobalId(consumerObject.login, consumerObject.password, inputItems);
+                    EmexApp.EmExInmotion.SetInmotionStateByGlobalIdOutputItem[] result = emexInmotion.SetInmotionStateByGlobalId(consumerObject.login, consumerObject.password, inputItems);
                 }
             }
         }

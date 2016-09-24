@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using EmexApp.EmExInmotion;
 
 namespace EmexApp
 {
@@ -34,6 +35,11 @@ namespace EmexApp
                 RepresentationList.Add(WholesalerRepresentation.ToString());
             }
             return RepresentationList;
+        }
+
+        void IWholesaler.AddWholesalerElement(InmConsumer_v2 inmConsumerElement)
+        {
+            throw new NotImplementedException();
         }
 
         private void IniteWholesalerList()
@@ -82,6 +88,16 @@ namespace EmexApp
             Wholesaler.OptovikManagerId = 1;
             Wholesaler.OptovikManagerFio = "Федоров Федор продавец";
             WholesalerList.Add(Wholesaler);
+        }
+
+        StaticVariables.WholesalerElement IWholesaler.WholesalerElement(int WholesalerIndex)
+        {
+            throw new NotImplementedException();
+        }
+
+        List<string> IWholesaler.WholesalerRepresentationList()
+        {
+            throw new NotImplementedException();
         }
     }
 }
