@@ -39,7 +39,7 @@ namespace EmexApp
 
         void IWholesaler.AddWholesalerElement(InmConsumer_v2 inmConsumerElement)
         {
-            throw new NotImplementedException();
+            IniteWholesalerList();
         }
 
         private void IniteWholesalerList()
@@ -92,12 +92,24 @@ namespace EmexApp
 
         StaticVariables.WholesalerElement IWholesaler.WholesalerElement(int WholesalerIndex)
         {
-            throw new NotImplementedException();
+            return WholesalerList[WholesalerIndex];
         }
 
         List<string> IWholesaler.WholesalerRepresentationList()
         {
-            throw new NotImplementedException();
+            List<string> RepresentationList = new List<string>();
+            foreach (StaticVariables.WholesalerElement Wholesaler in WholesalerList)
+            {
+                StringBuilder WholesalerRepresentation = new StringBuilder();
+                WholesalerRepresentation.Append(Wholesaler.UserLogo);
+                WholesalerRepresentation.Append(" (");
+                WholesalerRepresentation.Append(Wholesaler.UserFamily);
+                WholesalerRepresentation.Append(Wholesaler.UserFirstName);
+                WholesalerRepresentation.Append(Wholesaler.UserLastName);
+                WholesalerRepresentation.Append(")");
+                RepresentationList.Add(WholesalerRepresentation.ToString());
+            }
+            return RepresentationList;
         }
     }
 }

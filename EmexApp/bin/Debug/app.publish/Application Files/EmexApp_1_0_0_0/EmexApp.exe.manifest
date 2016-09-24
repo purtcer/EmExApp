@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
+  <asmv1:assemblyIdentity name="EmexApp.exe" version="1.0.0.0" publicKeyToken="65893ee7acf34533" language="neutral" processorArchitecture="msil" type="win32" />
+  <application />
+  <entryPoint>
+    <assemblyIdentity name="EmexApp" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+    <commandLine file="EmexApp.exe" parameters="" />
+  </entryPoint>
+  <trustInfo>
+    <security>
+      <applicationRequestMinimum>
+        <PermissionSet Unrestricted="true" ID="Custom" SameSite="site" />
+        <defaultAssemblyRequest permissionSetReference="Custom" />
+      </applicationRequestMinimum>
+      <requestedPrivileges xmlns="urn:schemas-microsoft-com:asm.v3">
+        <!--
+          Параметры манифеста UAC
+          При необходимости изменить уровень управления учетными записями Windows замените 
+          узел requestedExecutionLevel одним из следующих значений.
+
+        <requestedExecutionLevel  level="asInvoker" uiAccess="false" />
+        <requestedExecutionLevel  level="requireAdministrator" uiAccess="false" />
+        <requestedExecutionLevel  level="highestAvailable" uiAccess="false" />
+
+        Если вы хотите использовать виртуализацию файлов и реестра для обратной
+             совместимости, удалите узел requestedExecutionLevel.
+    -->
+        <requestedExecutionLevel level="asInvoker" uiAccess="false" />
+      </requestedPrivileges>
+    </security>
+  </trustInfo>
+  <dependency>
+    <dependentOS>
+      <osVersionInfo>
+        <os majorVersion="5" minorVersion="1" buildNumber="2600" servicePackMajor="0" />
+      </osVersionInfo>
+    </dependentOS>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="Microsoft.Windows.CommonLanguageRuntime" version="4.0.30319.0" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="EmexApp.exe" size="64448">
+      <assemblyIdentity name="EmexApp" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>pue1+NVNFGOiJFczW5Nq8TcdeYUXRPvEYDiIOT3G+7M=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <file name="EmexApp.exe.config" size="1858">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>ZJIWcawVghpBnF13dUF/Aphf0BAmfk+yi83t2V79c7A=</dsig:DigestValue>
+    </hash>
+  </file>
+<publisherIdentity name="CN=UserHP\User" issuerKeyHash="aef7f53991ae383f29658bf3cb9bd87bad26c774" /><Signature Id="StrongNameSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>vv1u8vZ65cz8LpFy2j3rkFqerRIVenwGn9ZsN+4yKbg=</DigestValue></Reference></SignedInfo><SignatureValue>KX+QXZxo8pcQmPGLn1YHaZXt6xtWWpkjnjtlhxxezoPG3WqvXw0oCW998XCYf2JIOngLM0mejeUM8koDLs6+JDNguVVk74hn/F5GIH0yvfb+sZZn4+h9VIsjlsSJaQh9i0PNww/MoLIZEsLdN9q84n9Szjm7zrlVT48yiVMKZeg=</SignatureValue><KeyInfo Id="StrongNameKeyInfo"><KeyValue><RSAKeyValue><Modulus>sdlV+Eg+bnAktKBSRm1dUyFBiiUGrBxVB6uQzuIsVlAAH7CiJKa3rJDnKzY8s4MAIzRA/h1hqieJIqd74ql3Ghwp29bg6OpHs2uCmmvzOcwjLJsUVfjSfs5TTo/O0+AL63eUEnyxURaZPJE1GAK4HQi7VQX6lAa8tXyTV4x8TMk=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><msrel:RelData xmlns:msrel="http://schemas.microsoft.com/windows/rel/2005/reldata"><r:license xmlns:r="urn:mpeg:mpeg21:2003:01-REL-R-NS" xmlns:as="http://schemas.microsoft.com/windows/pki/2005/Authenticode"><r:grant><as:ManifestInformation Hash="b82932ee376cd69f067c7a1512ad9e5a90eb3dda72912efccce57af6f26efdbe" Description="" Url=""><as:assemblyIdentity name="EmexApp.exe" version="1.0.0.0" publicKeyToken="65893ee7acf34533" language="neutral" processorArchitecture="msil" type="win32" /></as:ManifestInformation><as:SignedBy /><as:AuthenticodePublisher><as:X509SubjectName>CN=UserHP\User</as:X509SubjectName></as:AuthenticodePublisher></r:grant><r:issuer><Signature Id="AuthenticodeSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>/V+JTjEGHnjq5PQczrp3GwGUx2koWd7ZyPekaPylSUw=</DigestValue></Reference></SignedInfo><SignatureValue>E3k3QtYgraOO23vEcrcJx3LPsd8wulZxanflzKu1z9SnBnatLfW8NRmSG8+s/6YdwfJ/nfVIR2bxDgwR48OPruFafIDt4vdxB7btUYefrvB6EoMZhQ/k0t7rm2m1PyaSiF+mzbuCx2EPaWkvnjWiizaNd8++8Lrcmdizfgek6yU=</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>sdlV+Eg+bnAktKBSRm1dUyFBiiUGrBxVB6uQzuIsVlAAH7CiJKa3rJDnKzY8s4MAIzRA/h1hqieJIqd74ql3Ghwp29bg6OpHs2uCmmvzOcwjLJsUVfjSfs5TTo/O0+AL63eUEnyxURaZPJE1GAK4HQi7VQX6lAa8tXyTV4x8TMk=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><X509Data><X509Certificate>MIIBxTCCAS6gAwIBAgIQW26tvXQtsrtLzW224SRIojANBgkqhkiG9w0BAQsFADAhMR8wHQYDVQQDHhYAVQBzAGUAcgBIAFAAXABVAHMAZQByMB4XDTE2MDkyNDE3NTYzOFoXDTE3MDkyNDIzNTYzOFowITEfMB0GA1UEAx4WAFUAcwBlAHIASABQAFwAVQBzAGUAcjCBnzANBgkqhkiG9w0BAQEFAAOBjQAwgYkCgYEAsdlV+Eg+bnAktKBSRm1dUyFBiiUGrBxVB6uQzuIsVlAAH7CiJKa3rJDnKzY8s4MAIzRA/h1hqieJIqd74ql3Ghwp29bg6OpHs2uCmmvzOcwjLJsUVfjSfs5TTo/O0+AL63eUEnyxURaZPJE1GAK4HQi7VQX6lAa8tXyTV4x8TMkCAwEAATANBgkqhkiG9w0BAQsFAAOBgQCEhho5oyFNO89NChTTMIPTs2RwuA7cIq+zL+r5E35vczHHyYVzJkhmdVdYvIEqemAaYz1fUGoWmhLlMkpyE0MLaQZZOqffHaopjdvB2SIMsPP/fXiYu4IGXI1QVcsLms4WxmIuGXd9LEnuCR4X3BGsrZdWTF/m1HrRoF7Nw7b1cQ==</X509Certificate></X509Data></KeyInfo></Signature></r:issuer></r:license></msrel:RelData></KeyInfo></Signature></asmv1:assembly>

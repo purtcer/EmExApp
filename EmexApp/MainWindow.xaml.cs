@@ -35,7 +35,7 @@ namespace EmexApp
             else
             {
                 Wholesaler = new WholesalerMock();
-                InmConsumer = new InmConsumerMock();
+                InmConsumer = new InmConsumerMock(Wholesaler);
                 Inmotion = new InmotionMock();
             }
             UpbateClientsList();
@@ -51,14 +51,14 @@ namespace EmexApp
             {
                 Wholesaler = new WholesalerMock();
             }
-            //try
-            //{
+            try
+            {
                 InmConsumer = new InmConsumer(Wholesaler);
-            //}
-            //catch
-            //{
-            //    InmConsumer = new InmConsumerMock();
-            //}
+            }
+            catch
+            {
+                InmConsumer = new InmConsumerMock(Wholesaler);
+            }
             try
             {
                 Inmotion = new Inmotion();

@@ -32,16 +32,17 @@ namespace EmexApp
 
             // Calculate the number of lines per page.
             linesPerPage = ev.MarginBounds.Height / lineHeigth;
-
+            int countPage = 0;
             // Iterate over the file, printing each line.
-            while (count < linesPerPage && count < MainInmConsumerList.Count)
+            while (countPage < linesPerPage && count < MainInmConsumerList.Count)
             {
                 InmConsumerDefault InmConsumerelements = MainInmConsumerList[count];
                 //line = InmConsumerelements.DetailNum +  + InmConsumerelements.DetailNameRusUser;
-                yPos = topMargin + (count * lineHeigth);
+                yPos = topMargin + (countPage * lineHeigth);
                 ev.Graphics.DrawString(printLine(InmConsumerelements), printFont, Brushes.Black,
                    leftMargin, yPos, new StringFormat());
                 count++;
+                countPage++;
             }
 
             // If more lines exist, print another page.

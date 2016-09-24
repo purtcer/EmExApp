@@ -11,6 +11,12 @@ namespace EmexApp
     {
         List<StaticVariables.WholesalerElement> WholesalerList = new List<StaticVariables.WholesalerElement>();
         Hashtable wholesalerCollection = new Hashtable();
+        EmExDictionaries.EmExDictionaries emexDict = new EmexApp.EmExDictionaries.EmExDictionaries();
+
+        public Wholesaler()
+        {
+            emexDict.TestConnect("Test");
+        }
 
         public StaticVariables.WholesalerElement WholesalerElement(int WholesalerIndex)
         {
