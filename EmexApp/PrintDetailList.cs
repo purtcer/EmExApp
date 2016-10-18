@@ -14,10 +14,12 @@ namespace EmexApp
     {
         private Font printFont;
         List<InmConsumerDefault> MainInmConsumerList;
+        StaticVariables.WholesalerElement MainWholesalerElement;
         int count = 0;
-        public PrintDetailList(List<InmConsumerDefault> InmConsumerList)
+        public PrintDetailList(List<InmConsumerDefault> InmConsumerList, StaticVariables.WholesalerElement WholesalerElement)
         {
             MainInmConsumerList = InmConsumerList;
+            MainWholesalerElement = WholesalerElement;
             Printing();
         }
 
@@ -34,6 +36,13 @@ namespace EmexApp
             linesPerPage = ev.MarginBounds.Height / lineHeigth;
             int countPage = 0;
             // Iterate over the file, printing each line.
+            if (count == 0)
+            {
+                yPos = topMargin + (countPage * lineHeigth);
+                ev.Graphics.DrawString(printClient(), printFont, Brushes.Black,
+                   leftMargin, yPos, new StringFormat());
+                countPage++;
+            }
             while (countPage < linesPerPage && count < MainInmConsumerList.Count)
             {
                 InmConsumerDefault InmConsumerelements = MainInmConsumerList[count];
@@ -62,6 +71,16 @@ namespace EmexApp
             return line.ToString();
         }
 
+        private string printClient()
+        {
+            StringBuilder line = new StringBuilder();
+            line.Append("           " + MainWholesalerElement.UserId + " ");
+            line.Append(MainWholesalerElement.UserFamily + " ");
+            line.Append(MainWholesalerElement.UserLogo);
+
+            return line.ToString();
+        }
+
         // Print the file.
         public void Printing()
         {
@@ -70,7 +89,7 @@ namespace EmexApp
                 //streamToPrint = new StreamReader(filePath);
                 try
                 {
-                    printFont = new Font("Arial", 14);
+                    printFont = new Font("Arial", 12);
                     PrintDocument pd = new PrintDocument();
                     pd.PrintPage += new PrintPageEventHandler(pd_PrintPage);
                     // Print the document.

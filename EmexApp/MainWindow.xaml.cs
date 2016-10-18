@@ -88,7 +88,7 @@ namespace EmexApp
         {
             StaticVariables.WholesalerElement WholesalerElement = Wholesaler.WholesalerElement(cbClients.SelectedIndex);
             List<InmConsumerDefault> MainInmConsumerList = InmConsumer.InmConsumerList(WholesalerElement);
-            PrintDetailList printDetailsList = new PrintDetailList(MainInmConsumerList);
+            PrintDetailList printDetailsList = new PrintDetailList(MainInmConsumerList, WholesalerElement);
         }
 
         private void btnSettings_Click(object sender, RoutedEventArgs e)

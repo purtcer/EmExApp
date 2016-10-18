@@ -23,5 +23,6 @@ namespace EmexApp
         public string PotrebitelName { get; set; }
         public long UserId { get; set; }
         public byte[] timestamp { get; set; }
+        public byte state { get; set; }
     }
 }

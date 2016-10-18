@@ -54,6 +54,7 @@ namespace EmexApp
                 InmConsumerElement.PriceLogo = inmConsumerElement.PriceLogo;
                 InmConsumerElement.PotrebitelName = inmConsumerElement.PotrebitelName;
                 InmConsumerElement.UserId = inmConsumerElement.UserId;
+                InmConsumerElement.state = (byte)inmConsumerElement.State;
                 MainInmConsumerList.Add(InmConsumerElement);
                 whosalerObject.AddWholesalerElement(inmConsumerElement);
             }
